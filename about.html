@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Our Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .team-member {
+            flex: 1 1 calc(33.333% - 20px);
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        .team-member h3 {
+            margin: 10px 0;
+            color: #4CAF50;
+        }
+        .team-member p {
+            color: #777;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .team-member {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <!-- About Section -->
+    <section>
+        <h2>About Us</h2>
+        
+        <p>Welcome to our web scraping website! Our mission is to provide reliable, efficient, and easy-to-use web scraping solutions for data enthusiasts, developers, and businesses alike.</p>
+        <p>We specialize in helping users extract data from the web in an ethical and legal manner. Whether you're just starting with web scraping or you're an advanced user, we aim to offer helpful guides, tools, and best practices to ensure your success.</p>
+    </section>
+
+    <!-- Our Team Section -->
+    <section>
+        <h2>Meet Our Team</h2>
+        <div class="team">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+               
+                <h3>Pranil Raul</h3>
+                <p>Team Leader </p>
+                <p>The team leader guides our web scraping project, ensuring ethical practices, fostering collaboration, and transforming data into actionable insights.</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <h3>Prachi Mohod</h3>
+                <p>Frontend</p>
+                <p>Create an engaging website interface that prioritizes user experience, utilizing responsive design and visually appealing layouts for seamless interaction.</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <h3>Khushi Tirpude</h3>
+                 <p>Backend</p>
+                <p>Create a robust backend system that efficiently processes data, manages server logic, and integrates seamlessly with the web scraping solution</p>
+            </div>
+
+            <!-- You can add more team members as needed -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Web Scraping Experts. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
