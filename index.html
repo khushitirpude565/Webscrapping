@@ -1,0 +1,88 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block title %}Amazon Product Scraper{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center mb-8">Amazon Product Scraper</h1>
+    
+    <div class="max-w-xl mx-auto">
+        <form id="scrapeForm" class="mb-8">
+            <div class="flex gap-4">
+                <input type="text" 
+                       id="keyword" 
+                       name="keyword" 
+                       class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                       placeholder="Enter product keyword..."
+                       required>
+                <button type="submit" 
+                        class="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    Search
+                </button>
+            </div>
+        </form>
+
+        <div id="loading" class="hidden text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
+            <p class="mt-4 text-gray-600">Scraping products... Please wait.</p>
+        </div>
+
+        <div id="results" class="space-y-4"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.getElementById('scrapeForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const keyword = document.getElementById('keyword').value;
+        const loading = document.getElementById('loading');
+        const results = document.getElementById('results');
+        const searchButton = e.target.querySelector('button[type="submit"]');
+
+        searchButton.disabled = true;
+        loading.classList.remove('hidden');
+        results.innerHTML = '';
+        
+        try {
+            const response = await fetch('/scrape', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `keyword=${encodeURIComponent(keyword)}`
+            });
+            
+            const data = await response.json();
+            
+            if (data.error) {
+                throw new Error(data.error);
+            }
+            
+            results.innerHTML = data.results.map(item => `
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <h3 class="font-semibold text-lg">${item.title}</h3>
+                    <p class="text-green-600 font-medium mt-2">${item.price}</p>
+                    <a href="${item.link}" target="_blank" class="text-blue-500 hover:underline mt-2 inline-block">
+                        View on Amazon
+                    </a>
+                </div>
+            `).join('');
+            
+        } catch (error) {
+            results.innerHTML = `
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                    Error: ${error.message}
+                </div>
+            `;
+        } finally {
+            searchButton.disabled = false;
+            loading.classList.add('hidden');
+        }
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,6 @@
+Flask
+nbformat
+nbconvert
+pandas
+requests
+beautifulsoup4

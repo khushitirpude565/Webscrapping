@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Web Scraping Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 p-4 shadow">
+        <h1 class="text-white text-2xl font-bold">Web Scraping Service</h1>
+        <nav class="mt-2">
+            <a class="text-white hover:text-blue-200 px-3" href="{{ url_for('home') }}">Home</a>
+            <a class="text-white hover:text-blue-200 px-3" href="{{ url_for('features') }}">Features</a>
+            <a class="text-white hover:text-blue-200 px-3" href="#download">Download</a>
+            <a class="text-white hover:text-blue-200 px-3" href="{{ url_for('about') }}">About Us</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-6 px-4">
+        <h2 class="text-3xl font-semibold mb-4">About Us</h2>
+        <p class="mb-4">Our mission is to provide efficient web scraping solutions for various data extraction needs.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white shadow-md rounded-lg p-4 transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold">Pranil Raul</h3>
+                <p>Team Leader</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-4 transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold">Prachi Mohod</h3>
+                <p>Frontend Developer</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-4 transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold">Khushi Tirpude</h3>
+                <p>Backend Developer</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-600 p-4 text-center text-white mt-6">
+        <p>&copy; 2024 Web Scraping Service. All rights reserved.</p>
+    </footer>
+</body>
+</html>

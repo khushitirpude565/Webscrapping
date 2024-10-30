@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Web Scraping Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 p-4 shadow">
+        <h1 class="text-white text-2xl font-bold">Web Scraping Service</h1>
+        <nav class="mt-2">
+            <a class="text-white hover:text-blue-200 px-3" href="{{ url_for('home') }}">Home</a>
+            <a class="text-white hover:text-blue-200 px-3" href="{{ url_for('features') }}">Features</a>
+            <a class="text-white hover:text-blue-200 px-3" href="#download">Download</a>
+            <a class="text-white hover:text-blue-200 px-3" href="{{ url_for('about') }}">About Us</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-6 px-4">
+        <h2 class="text-3xl font-semibold mb-4">Features of Our Web Scraping Service</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white shadow-md rounded-lg p-4 transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold">Data Extraction</h3>
+                <p>Extract data from various websites, including e-commerce and blogs.</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-4 transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold">Multiple Formats</h3>
+                <p>Save data in CSV, JSON, or XML formats for easy integration.</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-4 transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold">Customizable Solutions</h3>
+                <p>Tailor our scraping service to fit your specific data needs.</p>
+            </div>
+            <div class="bg-white shadow-md rounded-lg p-4 transition-transform transform hover:scale-105">
+                <h3 class="text-xl font-bold">Fast and Reliable</h3>
+                <p>Get data quickly and consistently, backed by our robust infrastructure.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-blue-600 p-4 text-center text-white mt-6">
+        <p>&copy; 2024 Web Scraping Service. All rights reserved.</p>
+    </footer>
+</body>
+</html>

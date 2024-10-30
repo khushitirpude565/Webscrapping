@@ -1,0 +1,36 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Web Scraping Service</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Web Scraping Service</h1>
+            <nav class="mt-2">
+                <a href="{{ url_for('index') }}" class="mx-2 text-white hover:text-blue-300">Home</a>
+                <a href="{{ url_for('features') }}" class="mx-2 text-white hover:text-blue-300">Features</a>
+                <a href="#download" class="mx-2 text-white hover:text-blue-300">Download</a>
+                <a href="{{ url_for('about') }}" class="mx-2 text-white hover:text-blue-300">About Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Welcome to Our Web Scraping Service</h2>
+            <p class="mb-4">Our service allows you to effortlessly scrape data and customize it to fit your needs.</p>
+        </section>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Web Scraping Service. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
